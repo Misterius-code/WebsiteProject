@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chicken Adventure</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+
+    <script type="text/javascript">
+
+        var number = 0
+
+
+        var timer1 = 0;
+        var timer2 = 0;
+
+        function setSlide(nrofslide) {
+            clearTimeout(timer1);
+            clearTimeout(timer2);
+            number = nrofslide - 1;
+
+            hideSlide();
+            setTimeout("changeSlide()", 500);
+
+        }
+
+        function hideSlide() {
+            $("#slider").fadeOut(500);
+        }
+
+        function changeSlide() {
+            timer1 = 0;
+            timer2 = 0;
+            number++; if (number > 4) number = 1;
+            if (number <= 2) {
+                var file = "<img src=\"slajdy/" + number + ".gif\" />";
+                document.getElementById("slideShow").style.width = "640px";
+
+            }
+            else {
+                var file = "<img src=\"slajdy/" + number + ".png\" />";
+                document.getElementById("slideShow").style.width = "1000px";
+
+            }
+            document.getElementById("slider").innerHTML = file;
+            $("#slider").fadeIn(500);
+
+            timer1 = setTimeout("changeSlide()", 3500);
+            timer2 = setTimeout("hideSlide()", 3000);
+
+        }
+
+    </script>
+
+</head>
+
+<body onload="changeSlide()">
+
+    <div id="navbar">
+        <!--<div><h1>Potato Gaming</h1></div> -->
+        <nav>
+            <ul>
+
+                <li><a href="#container">Chicken Adventure</a></li>
+                <li ><a href="#aboutGame">About game</a></li>
+                <li ><a href="#characters">characters</a></li>
+                <li ><a href="#guide">Guide</a></li>
+                <li ><a href="#download">Downoload</a></li>
+            </ul>
+        </nav>
+
+    </div>
+    <div id="container">
+      
+    </div>
+
+    <div id="aboutGame">
+        <h1>About game</h1>
+        <br>
+        <div class="aboutBox">
+        <h2>Introduction:</h2>
+
+        <p> The game was writen as my final project assigment for college.
+            The main purpouse of this game is to deafeat a boss and resuce a queen. In order to do that player will take
+            a role of chicken knight and will need to defeat many foxes on the way to final boss.
+            This is a platfor game where player can jump to other platforms in order to avoid enemy or collect "corns"
+            with gives a special points. These corns can be exchange in the shop for health potions or extra demage
+            points.
+            This game is a retro style game with pixel art. It is similar to old good "Mario" games.
+            in order to create this game I did use a visual basic language and visual
+            studio software with the forms.Game use orginal content and all the animation and graphics are made by me.
+            Overall the
+            game got around 1300 lines of code and the size is 50 MB.
+
+        </p>
+   
+        <br>
+        <h2>Plot:</h2>
+        
+        <blockquote>
+            <p>
+                "Long time ago in Lost World was beautiful castle ruled by Queen. Every chicken was happy in their
+                kingdom
+                BUT THEN on one day another fractions ruled by Master sorcerer Fox kidnapped Queen. Chicken kingdom
+                immediately took action to retrieve their Queen from sly foxes. They send a brave Chicken Knight for
+                this mission." - <cite>Burned Feather</cite>
+            </p>
+        </blockquote>
+        <p>As the tale above tells , the brave chicken knight grabbed his sword and went for adventure to save his beloved queen from enemy
+            nation ruled by foxes. </p>
+            <br>
+        <h2>Tehnical Requrments:</h2>
+        <p>
+            <ul>
+            <li>System:Windows 7/8/10</li>
+            <li>At least 1GB of RAM</li>
+            <li>70MB of free space on your disc</li>
+          </ul>  
+
+        </p>
+    </div>
+        <br>
+    
+        <div id="slideShow">
+            <h2>Scenes from game:</h2>
+            <div id="slider"></div>
+            <span onclick="setSlide(1)" style="cursor:pointer;">[ 1 ]</span>
+            <span onclick="setSlide(2)" style="cursor:pointer;">[ 2 ]</span>
+            <span onclick="setSlide(3)" style="cursor:pointer;">[ 3 ]</span>
+            <span onclick="setSlide(4)" style="cursor:pointer;">[ 4 ]</span>
+
+        </div>
+
+
+
+
+
+
+    </div>
+
+    <div id="characters">
+        <h1>Characters:</h1>
+        <div class="charBoxes">
+            <div class="upper">
+                <h1>Chicken Knight</h1>
+
+                <img src="img/Kurczakwithswordleft.png" alt="Chicken with sword">
+            </div>
+            <div class="extrainfo">
+                <div class="stats">
+                    <h2>Stats:</h2>
+                    <p>Health:3</p>
+                    <p>Attack:1</p>
+                    <p>Speed:10</p>
+                </div>
+                <div class="desc">
+                    <h2>Description</h2>
+                    <p>A brave chicken knight willing sacrifice his feathers to rescue his queen. </p>
+                </div>
+            </div>
+        </div>
+
+
+
+        <div class="charBoxes">
+            <div class="upper">
+                <h1>Enemy Fox</h1>
+
+                <img src="img/fixed fox.png" alt="Enemy Fox">
+            </div>
+            <div class="extrainfo">
+                <div class="stats">
+                    <h2>Stats:</h2>
+                    <p>Health:3</p>
+                    <p>Attack:1</p>
+                    <p>Speed:5</p>
+                </div>
+                <div class="desc">
+                    <h2>Description</h2>
+                    <p>A brave chicken knight willing sacrifice his feathers to rescue his queen. </p>
+                </div>
+            </div>
+        </div>
+        <div style="clear: both;"></div>
+
+
+
+        <div class="charBoxes">
+            <div class="upper">
+                <h1>Knight Fox</h1>
+
+                <img src="img/fixed_foxknight_left.png" alt="Enemy Fox">
+            </div>
+            <div class="extrainfo">
+                <div class="stats">
+                    <h2>Stats:</h2>
+                    <p>Health:5</p>
+                    <p>Attack:1</p>
+                    <p>Speed:5</p>
+                </div>
+                <div class="desc">
+                    <h2>Description</h2>
+                    <p>A brave chicken knight willing sacrifice his feathers to rescue his queen. </p>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div class="charBoxes">
+            <div class="upper">
+                <h1>Magic Fox</h1>
+
+                <img src="img/fixed_MAGICFOX_left.png" alt="Enemy Fox">
+            </div>
+            <div class="extrainfo">
+                <div class="stats">
+                    <h2>Stats:</h2>
+                    <p>Health:8</p>
+                    <p>Attack:2</p>
+                    <p>Speed:10</p>
+                </div>
+                <div class="desc">
+                    <h2>Description</h2>
+                    <p>A brave chicken knight willing sacrifice his feathers to rescue his queen. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="clear:both"></div>
+    <h1>Guide:</h1>
+    <div id="guide">
+       
+        <div>
+            <h2>Movments:</h2>
+            <p>In order to move character during game player need to press:
+                Right arrow to move Right.
+                Left arrow to move Left.
+                Up arrow to jump.
+            </p>
+        </div>
+        <h2>Strategy:</h2>
+        <p>In order to rescue queen , player needs to defeat or avoid foxes on the way. Some of the foxes are avoidable
+            so in order to keep health player might use this strategy but it might mean loss corns points which means
+            player will not be able to buy many potions or attacks points.
+
+            Another strategy requires to as soon as posible to buy attack points to defeat foxes on the way with only
+            one attack and the rest of points invest in potions to survive final boss.
+        </p>
+        <h2>Shop:</h2>
+        <p>
+            Player can buy health potions or attacks points which will help him survive and defeat opoments quicker. In
+            order to buy items player need to collect a corns during game.
+        </p>
+
+    </div>
+    <h1>Download</h1>
+    <div id="download">
+      
+
+        <h2>Download newest version:<a href="game/FileWhichPretendToBeAGame_v10" download="ChickenAdventure_v10.txt">
+                ChickenAdventure_v10</a></h2>
+        <h4>Download previous versions:</h4>
+        <a href="game/FileWhichPretendToBeAGame_v9.txt" download="ChickenAdventure_v9.txt">ChickenAdventure_v9</a>
+        <br> <br>
+        <a href="game/FileWhichPretendToBeAGame_v8.txt" download="ChickenAdventure_v8.txt">ChickenAdventure_v8</a>
+        <br> <br>
+        <a href="game/FileWhichPretendToBeAGame_v7.txt" download="ChickenAdventure_v7.txt">ChickenAdventure_v7</a>
+
+    </div>
+    <div id="contactme">
+        <h1>Contact me</h1>
+        <p>There are some ways to stay with touch.</p>
+        <a href="https://www.facebook.com" target="_blank" id="Facebook">Facebook</a>
+        <a href="https://www.reddit.com" target="_blank" id="Google">Reddit</a>
+        <a href="https://www.facebook.com/misterius.soro" target="_blank" id="linkedin">linkedin</a>
+        <div id="contact">
+            <h2>Contact Form</h2>
+            <form action="mailto:4alekm54@solent.ac.uk" method="post">
+                <p> <label for="name"> Full Name:</label><br> <input type="text" name="name"
+                        placeholder="Your full name.." required></p>
+                <p> <label for="email">Email:</label> <br><input type="email" name="email" placeholder="Your email.."
+                        required> </p>
+                <p> <label for="comment">Message:</label> <br>
+                    <textarea rows="6" cols="22" name="comment" form="usrform" placeholder="Your message.."></textarea>
+                </p>
+
+            </form>
+            <p><input style="margin-left: 15%" type="submit" value="Send Email"> </p>
+        </div>
+    </div>
+    <footer>
+        <small>&copy; Copyright 2020, Michal Aleksandrowicz. All Rights Reserved</small>
+    </footer>
+</body>
+
+</html>
